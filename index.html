@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart with Names</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #ffcccc, #ffe6e6);
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .heart {
+      position: relative;
+      width: 250px;
+      height: 220px;
+      background-color: red;
+      transform: rotate(-45deg);
+      box-shadow: -10px 10px 90px rgba(255, 0, 0, 0.7);
+      animation: heartbeat 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 220px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -120px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 120px;
+      top: 0;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1) rotate(-45deg); }
+      25% { transform: scale(1.1) rotate(-45deg); }
+      50% { transform: scale(1) rotate(-45deg); }
+      75% { transform: scale(1.1) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+
+    .names {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      text-align: center;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px black;
+      z-index: 10; /* 👈 yeh add kiya */
+    }
+
+    .names span {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">
+    <div class="names">
+      <span>Pujan ❤️</span>
+      <span>Prerna</span>
+    </div>
+  </div>
+</body>
+</html>
